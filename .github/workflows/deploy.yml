@@ -32,3 +32,4 @@ jobs:
             --region europe-west12 \
             --allow-unauthenticated \
             --project nextjs-fresh-start-462605
+          
