@@ -29,6 +29,17 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
+
+##############################################################
+
+Note utili per i prossimi sviluppi Google Cloud:
+
+- se vuoi deployare la tua app su cloud run con una pipeline CICD basata su repository bisogna fare le seguenti cose:
+    - creare un service account che si occupi del deploy
+    - collegarlo al repository GitHub: creare una chiave json, inserirla nei secrets del repository
+    - creare un file deploy.yaml apposito che istruisca build e deploy automatici e contenga altre info utili (come il secret del passo precedente)
+    - assegnare al service account coinvolto una lunga lista di permessi: ['roles/artifactregistry.admin', 'roles/artifactregistry.serviceAgent', 'roles/artifactregistry.writer', 'roles/cloudbuild.builds.builder', 'roles/cloudbuild.serviceAgent', 'roles/containeranalysis.ServiceAgent', 'roles/containerregistry.ServiceAgent', 'roles/editor', 'roles/iam.serviceAccountUser', 'roles/logging.logWriter', 'roles/owner', 'roles/pubsub.serviceAgent', 'roles/run.admin', 'roles/run.invoker', 'roles/run.serviceAgent', 'roles/serviceusage.serviceUsageConsumer', 'roles/storage.admin'] 
+
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
